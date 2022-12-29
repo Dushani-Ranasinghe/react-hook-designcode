@@ -1,10 +1,15 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 
 export default function MyButtonComponent() {
+    const [count,setCounter] = useState(0)
+
+    useEffect(() => {
+        document.title = `clicked ${count} times`;
+      },[count]);
+
   return <div>
-    <Button>Sign in</Button>
-    <Button disabled>Sign in</Button>
+    <Button onClick={()=>{setCounter(count+1)}}>You clicked {count}</Button>
   </div>;
 }
 const Button = styled.button`
@@ -17,4 +22,5 @@ background: ${(props) => props.disabled ? "grey" : "linear-gradient(91.4deg, #2f
   color: white;
   font-weight: bold;
   margin: 10px;
+  cursor: pointer;
 `;

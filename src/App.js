@@ -4,7 +4,7 @@ import MyButtonComponent from './components/MyButtonComponent';
 function App() {
   return (
     <div className="App">
-    <h1>Hello Design Code</h1>
+    <h1>You clicked</h1>
     <MyButtonComponent/>
     </div>
   );
